@@ -251,10 +251,13 @@ header{
     }
 }
 @media screen and (min-width: 992px){
+    .logo{
+        width: 110px;
+    }
     .menu-box{
         background: transparent;
         position: absolute;
-        width: 70%;
+        width: 85%;
         display: flex;
         justify-content: space-between;
         align-items: stretch;
@@ -266,17 +269,51 @@ header{
     .menu{
         width: 60%;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: flex-start;
         margin-bottom: 0;
         gap: .5em;
     }
     .li-menu{
         justify-content: flex-start;
+        align-items: flex-start;
+        width: 125px;
     }
     .a-menu{
         color: var(--white);
-        /* padding: .8em 0; */
+        border-bottom: 1px solid transparent;
+        position: relative;
+    }
+    .a-menu::before{
+        content: '';
+        position: absolute;
+        width: 82%;
+        height: 1px;
+        top: 67%;
+        left: 0;
+        background: var(--white);
+        transition-duration: .5s;
+        opacity: 0;
+    }
+    .a-menu:hover::before{
+       opacity: 1;
+    }
+    .sub-menu{
+        width: 100%;
+        background: var(--white);
+    }
+    .menu a{
+        font-family: var(--font-ubuntu);
+        font-weight: 500;
+    }
+    .li-submenu{
+        justify-content: flex-start;
+    }
+    .a-submenu{
+        padding-left: 1em;
+    }
+    .a-submenu:hover{
+        font-weight: 700;
     }
     .button{
         display: none;
@@ -301,4 +338,7 @@ header{
         padding: 14px 30px;
         background:var(--white);
     }
+}
+.path{
+    color: black;
 }
