@@ -130,14 +130,14 @@ header{
 .nav-header{
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     position: relative;
-    /* height: 150px; */
     padding: 2em 0;
-    /* background: red; */
 }
 .button{
     cursor: pointer;
+    /* background: black; */
+    padding: .5em;
 }
 .menu-box{
     background: var(--white);
@@ -182,8 +182,12 @@ header{
     font-size: 18px;
     z-index: 9;
 }
-.a-menu span{
+.arrow{
     margin-left: .4em;
+    transition-duration: .5s;
+}
+.arrow-change{
+    transform: rotate(-180deg);
 }
 .sub-menu{
     z-index: 8;
@@ -257,7 +261,7 @@ header{
         border-radius: initial;
         padding: 0;
         clip-path: initial;
-        top: 2.5em;
+        top: 2em;
     }
     .menu{
         width: 60%;
@@ -272,7 +276,7 @@ header{
     }
     .a-menu{
         color: var(--white);
-        padding: .8em 0;
+        /* padding: .8em 0; */
     }
     .button{
         display: none;

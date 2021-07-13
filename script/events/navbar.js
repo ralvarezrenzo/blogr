@@ -1,4 +1,4 @@
-export default function navBar(aMenu, buttonMenu, menuBox){
+export default function navBar(aMenu, buttonMenu, menuBox,arrowChange){
     const d = document;
         let aMenuBtn= d.querySelectorAll(aMenu)
             aMenuBtn.forEach(aMenuClick =>{
@@ -6,11 +6,12 @@ export default function navBar(aMenu, buttonMenu, menuBox){
                     e.preventDefault();
                     let height = 0;
                     let subMenu = aMenuClick.nextElementSibling;
-                    console.log(subMenu.scrollHeight)
                     if(subMenu.clientHeight == "0"){
                         height = subMenu.scrollHeight;
                     }
                     subMenu.style.height = `${height}px`
+                    let arrow = aMenuClick.children[0];
+                    arrow.classList.toggle('arrow-change')
                 })
             })
     let btnMenu = d.getElementById(buttonMenu),
